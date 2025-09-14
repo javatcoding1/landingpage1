@@ -6,6 +6,7 @@ import HeroSection from "@/components/sections/hero";
 import PricingSection6 from "@/components/sections/pricing";
 import Feature1 from "@/components/sections/features";
 import BenefitsSection from "@/components/sections/benefits";
+import HomeHeader from "@/components/common/header2";
 // import { CTANew } from "@/components/sections/cta";
 // import { AnimatedBeamMultipleOutputDemo } from "@/components/common/animated-beam";
 
@@ -41,6 +42,8 @@ export default function Home() {
               strokeWidth={2}
             />
       </Banner>
+      
+      <HomeHeader />
       
       {/* Main content section with relative positioning and higher z-index */}
       <main className="relative z-10 min-h-screen flex flex-col">
