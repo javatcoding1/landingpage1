@@ -1,12 +1,22 @@
 "use client";
 import { TimelineContent } from "@/components/ui/timeline-animation";
-import { ArrowRight, PencilLine, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  PencilLine,
+  Globe,
+  Mic,
+  Video,
+  SkipForward,
+  PhoneOff,
+  User,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { useRef, forwardRef } from "react";
 import Pill from "@/components/ui/pill";
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 // User components representing different nations
 const UserIcons = {
@@ -61,14 +71,13 @@ const Circle = forwardRef<
       ref={ref}
       className={cn(
         "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white dark:bg-neutral-800 p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
-        className,
+        className
       )}
     >
       {children}
     </div>
   );
 });
-
 Circle.displayName = "Circle";
 
 const Icons = {
@@ -156,7 +165,7 @@ const Icons = {
         </filter>
       </defs>
       <path
-        d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+        d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z"
         fill="#b3b3b3"
         filter="url(#a)"
       />
@@ -169,7 +178,7 @@ const Icons = {
         fill="url(#linearGradient1780)"
       />
       <path
-        d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z"
+        d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z"
         fill="url(#b)"
       />
       <path
@@ -211,7 +220,7 @@ const Icons = {
         opacity=".05"
       />
       <path
-        d="M34.992,17.792c-0.319,0-0.63,0.107-0.899,0.31l-5.697,4.218	c-0.216,0.163-0.468,0.248-0.732,0.248c-0.259,0-0.504-0.082-0.71-0.236l-3.973-2.991c-0.719-0.535-1.568-0.817-2.457-0.817	c-1.405,0-2.696,0.705-3.455,1.887l-1.21,1.891l-4.115,6.688c-0.297,0.465-0.32,1.033-0.058,1.511c0.266,0.486,0.787,0.8,1.325,0.8	c0.319,0,0.63-0.107,0.899-0.31l5.697-4.218c0.216-0.163,0.468-0.248,0.732-0.248c0.259,0,0.504,0.082,0.71,0.236l3.973,2.991	c0.719,0.535,1.568,0.817,2.457,0.817c1.405,0,2.696-0.705,3.455-1.887l1.21-1.891l4.115-6.688c0.297-0.465,0.32-1.033,0.058-1.511	C36.051,18.106,35.531,17.792,34.992,17.792L34.992,17.792z"
+        d="M34.992,17.792c-0.319,0-0.63,0.107-0.899,0.31l-5.697,4.218	c-0.216,0.163-0.468,0.248-0.732,0.248c-0.259,0-0.504-0.082-0.71-0.236l-3.973-2.991c-0.719-0.535-1.568-0.817-2.457-0.817	c-1.405,0-2.696,0.705-3.455,1.887l-1.21,1.891l-4.115,6.688c-0.297,0.465-0.32,1.033-0.058,1.511c0.266,0.486,0.787,0.8,1.325,0.8	c0.319,0,0.63-0.107,0.899-0.31l5.697-4.218c0.216-0.163,0.468-0.248,0.732-0.248c0.259,0,0.504-0.082,0.71-0.236l3.973,2.991	c0.719,0.535,1.568,0.817,2.457,0.817c1.405,0,2.696-0.705,3.455-1.887l1.21-1.891l4.115-6.688c0.297-0.465,0.32-1.033,0.058-1.511	C36.051,18.106,35.531,17.792,34.992,17.792L34.992,17.792z"
         opacity=".07"
       />
       <path
@@ -248,14 +257,15 @@ const Icons = {
 
 const Feature1 = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
+
+  // Refs for the Remote Connectivity diagram
   const containerRef = useRef<HTMLDivElement>(null);
-  const div1Ref = useRef<HTMLDivElement>(null);
-  const div2Ref = useRef<HTMLDivElement>(null);
-  const div3Ref = useRef<HTMLDivElement>(null);
-  const div4Ref = useRef<HTMLDivElement>(null);
-  const div5Ref = useRef<HTMLDivElement>(null);
-  const div6Ref = useRef<HTMLDivElement>(null);
-  const div7Ref = useRef<HTMLDivElement>(null);
+  const div1Ref = useRef<HTMLDivElement>(null); // user
+  const div2Ref = useRef<HTMLDivElement>(null); // audio
+  const div3Ref = useRef<HTMLDivElement>(null); // video
+  const div4Ref = useRef<HTMLDivElement>(null); // next
+  const div5Ref = useRef<HTMLDivElement>(null); // leave
+  const div6Ref = useRef<HTMLDivElement>(null); // peer
 
   const revealVariants = {
     visible: (i: number) => ({
@@ -287,15 +297,15 @@ const Feature1 = () => {
 
   return (
     <div className="w-full min-h-screen relative bg-white dark:bg-black">
-      <section className="max-w-7xl mx-auto p-4 relative z-10" ref={featuresRef}>
+      <section
+        className="max-w-7xl mx-auto p-4 relative z-10"
+        ref={featuresRef}
+      >
         <article className="max-w-5xl mx-auto py-10 text-center space-y-2 px-8">
-          {/* Add the pill at the top */}
           <div className="flex justify-center mb-6">
-            <Pill variant="primary">
-              Features
-            </Pill>
+            <Pill variant="primary">Features</Pill>
           </div>
-          
+
           <TimelineContent
             as="h1"
             animationNum={0}
@@ -318,363 +328,421 @@ const Feature1 = () => {
             seamless remote connectivity.
           </TimelineContent>
         </article>
+
         <div className="grid grid-cols-12 gap-4">
-        {/* Global User Network */}
-        <TimelineContent
-          as="div"
-          animationNum={0}
-          timelineRef={featuresRef}
-          customVariants={revealVariants}
-          className="lg:col-span-5 sm:col-span-6 col-span-12 relative w-full h-[350px] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-        >
-          <div className="relative flex h-full w-full items-center justify-center">
-            {/* Center Logo */}
-            <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full z-10">
-              <Globe className="w-10 h-10 text-white" />
+          {/* Global User Network */}
+          <TimelineContent
+            as="div"
+            animationNum={0}
+            timelineRef={featuresRef}
+            customVariants={revealVariants}
+            className="lg:col-span-5 sm:col-span-6 col-span-12 relative w-full h-[350px] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+          >
+            <div className="relative flex h-full w-full items-center justify-center">
+              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full z-10">
+                <Globe className="w-10 h-10 text-white" />
+              </div>
+
+              <OrbitingCircles iconSize={50} radius={140} duration={20}>
+                <UserIcons.usa />
+                <UserIcons.uk />
+                <UserIcons.japan />
+                <UserIcons.germany />
+                <UserIcons.india />
+              </OrbitingCircles>
+
+              <OrbitingCircles
+                iconSize={45}
+                radius={100}
+                reverse
+                speed={1.5}
+                duration={15}
+              >
+                <UserIcons.brazil />
+                <UserIcons.canada />
+                <UserIcons.australia />
+              </OrbitingCircles>
             </div>
-            
-            {/* Outer orbit */}
-            <OrbitingCircles iconSize={50} radius={140} duration={20}>
-              <UserIcons.usa />
-              <UserIcons.uk />
-              <UserIcons.japan />
-              <UserIcons.germany />
-              <UserIcons.india />
-            </OrbitingCircles>
-            
-            {/* Inner orbit */}
-            <OrbitingCircles iconSize={45} radius={100} reverse speed={1.5} duration={15}>
-              <UserIcons.brazil />
-              <UserIcons.canada />
-              <UserIcons.australia />
-            </OrbitingCircles>
-          </div>
 
-          <article className="absolute right-0 bottom-0 left-0 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-6 pt-[100px] z-10">
-            <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
-              Global User Network
-            </h3>
-            <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
-              Connect with users from around the world. Our platform brings together diverse communities in a seamless experience.
-            </p>
-          </article>
-        </TimelineContent>
+            <article className="absolute right-0 bottom-0 left-0 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-6 pt-[100px] z-10">
+              <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
+                Global User Network
+              </h3>
+              <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
+                Connect with users from around the world. Our platform brings
+                together diverse communities in a seamless experience.
+              </p>
+            </article>
+          </TimelineContent>
 
-        {/* Usage Stats */}
-        <TimelineContent
-          as="div"
-          animationNum={1}
-          timelineRef={featuresRef}
-          customVariants={revealVariants}
-          className="lg:col-span-3 sm:col-span-6 col-span-12 border flex flex-col justify-between rounded-lg p-4 relative border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-        >
-          <div
-            className="absolute inset-0 z-0 rounded-lg"
-            style={{
-              background:
-                "radial-gradient(125% 125% at 50% 10%, #ffffff00 40%, #6366f1 100%)",
-            }}
-          />
-          <motion.div
-            className="flex -space-x-3 relative z-10"
-            initial={{ x: -30, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.8, duration: 0.6 }}
+          {/* Usage Stats */}
+          <TimelineContent
+            as="div"
+            animationNum={1}
+            timelineRef={featuresRef}
+            customVariants={revealVariants}
+            className="lg:col-span-3 sm:col-span-6 col-span-12 border flex flex-col justify-between rounded-lg p-4 relative border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
           >
-            {[
-              "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200",
-              "https://images.unsplash.com/photo-1617171594279-3aa1f300a0f2?q=80&w=200",
-              "https://images.unsplash.com/photo-1659228135452-c4c7b5118047?q=80&w=200",
-            ].map((src, i) => (
-              <motion.img
-                key={i}
-                src={src}
-                width={24}
-                height={24}
-                className="rounded-xl border-4 border-white dark:border-neutral-800 h-14 w-14 object-cover"
-                initial={{ scale: 0, rotate: 180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{
-                  delay: 2.0 + i * 0.2,
-                  duration: 0.5,
-                  type: "spring",
-                  stiffness: 200,
-                }}
-              />
-            ))}
-          </motion.div>
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 2.6, duration: 0.5 }}
-            className="relative z-10"
-          >
-            <motion.h1
-              className="text-4xl font-semibold sm:pt-0 pt-20 text-white"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 2.8, duration: 0.3, type: "spring" }}
+            <div
+              className="absolute inset-0 z-0 rounded-lg"
+              style={{
+                background:
+                  "radial-gradient(125% 125% at 50% 10%, #ffffff00 40%, #6366f1 100%)",
+              }}
+            />
+            <motion.div
+              className="flex -space-x-3 relative z-10"
+              initial={{ x: -30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.8, duration: 0.6 }}
             >
-              10M+
-            </motion.h1>
-            <p className="text-sm text-gray-200 dark:text-gray-300">
-              Used by millions of teams and professionals
-            </p>
-          </motion.div>
-        </TimelineContent>
-
-        {/* Memberships */}
-        <TimelineContent
-          as="div"
-          animationNum={2}
-          timelineRef={featuresRef}
-          customVariants={revealVariants}
-          className="lg:col-span-4 sm:col-span-6 col-span-12 border rounded-lg p-4 group border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-        >
-          <motion.h1
-            className="text-4xl font-semibold text-black dark:text-white"
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.5 }}
-          >
-            Memberships
-          </motion.h1>
-          <motion.p
-            className="text-sm text-gray-600 dark:text-gray-400"
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.8, duration: 0.5 }}
-          >
-            Generate revenue by creating memberships
-          </motion.p>
-          <div className="space-y-2 mt-6">
-            {[
-              {
-                title: "Monthly",
-                desc: "$19 per month, unlimited",
-                color: "green",
-                rotation: 0,
-              },
-              {
-                title: "Trial",
-                desc: "Free for 30 days",
-                color: "orange",
-                rotation: 3,
-              },
-              {
-                title: "Yearly",
-                desc: "$100 per year, unlimited",
-                color: "blue",
-                rotation: -1,
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                className={`flex gap-2 justify-between items-center bg-neutral-50 dark:bg-neutral-800 p-2 rounded-xl border border-neutral-200 dark:border-neutral-600 shadow-lg pl-7 relative before:content-[''] before:absolute before:left-2.5 before:rounded-md before:top-1.5 before:w-1.5 before:h-[80%] ${colorClasses[item.color as keyof typeof colorClasses]} group-hover:rotate-0 transition-all`}
-                style={{
-                  rotate: `${item.rotation}deg`,
-                  boxShadow: `0 10px 15px -3px rgb(${item.color === "green" ? "34 197 94" : item.color === "orange" ? "249 115 22" : "59 130 246"} / 0.1)`,
-                }}
-                initial={{ x: -30, opacity: 0, rotate: item.rotation + 10 }}
-                animate={{ x: 0, opacity: 1, rotate: item.rotation }}
-                transition={{
-                  delay: i * 0.2,
-                  duration: 0.6,
-                  type: "spring",
-                  stiffness: 100,
-                }}
-                whileHover={{ rotate: 0 }}
-              >
-                <div>
-                  <h3 className="font-semibold text-black dark:text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
-                </div>
-                <ArrowRight className="text-black dark:text-white" />
-              </motion.div>
-            ))}
-          </div>
-        </TimelineContent>
-
-        <TimelineContent
-          as="div"
-          animationNum={3}
-          timelineRef={featuresRef}
-          customVariants={revealVariants}
-          className="lg:col-span-7 sm:col-span-6 col-span-12 relative border p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-        >
-          <article className="w-full bg-gradient-to-t font-helvetica from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent">
-            <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
-              Remote Connectivity
-            </h3>
-            <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
-              Break free from traditional boundaries. Connect multiple platforms and services seamlessly through our unified network.
-            </p>
-          </article>
-          
-          <div
-            className="relative flex h-[300px] w-full items-center justify-center overflow-hidden"
-            ref={containerRef}
-          >
-            <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
-              <div className="flex flex-col justify-center gap-2">
-                <Circle ref={div1Ref}>
-                  <Icons.googleDrive />
-                </Circle>
-                <Circle ref={div2Ref}>
-                  <Icons.notion />
-                </Circle>
-                <Circle ref={div3Ref}>
-                  <Icons.whatsapp />
-                </Circle>
-                <Circle ref={div4Ref}>
-                  <Icons.messenger />
-                </Circle>
-                <Circle ref={div5Ref}>
-                  <Icons.googleDrive />
-                </Circle>
-              </div>
-              <div className="flex flex-col justify-center">
-                <Circle ref={div6Ref} className="size-16">
-                  <Icons.openai />
-                </Circle>
-              </div>
-              <div className="flex flex-col justify-center">
-                <Circle ref={div7Ref}>
-                  <Icons.user />
-                </Circle>
-              </div>
-            </div>
-
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={div1Ref}
-              toRef={div6Ref}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={div2Ref}
-              toRef={div6Ref}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={div3Ref}
-              toRef={div6Ref}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={div4Ref}
-              toRef={div6Ref}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={div5Ref}
-              toRef={div6Ref}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={div6Ref}
-              toRef={div7Ref}
-            />
-          </div>
-        </TimelineContent>
-
-        {/* Real Time Chat */}
-        <TimelineContent
-          as="div"
-          animationNum={4}
-          timelineRef={featuresRef}
-          customVariants={revealVariants}
-          className="lg:col-span-5 sm:col-span-6 col-span-12 relative border p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-        >
-          <div className="flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white dark:bg-neutral-800 shadow-lg">
-            {/* Messages Area */}
-            <div className="flex-1 space-y-4 p-4 overflow-hidden">
-              {/* Agent/Other person's message */}
-              <motion.div
-                className="mr-auto relative max-w-[80%] rounded-lg bg-gray-100 dark:bg-neutral-700 p-3 text-gray-800 dark:text-gray-200"
-                variants={messageVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{
-                  delay: 3.2,
-                  duration: 0.5,
-                  ease: "easeOut",
-                }}
-              >
-                Hey! I see that your last transaction was a dining purchase, which qualifies for 5x
-                points, but only for Platinum Status Tier members. You are currently in the{" "}
-                <span className="font-semibold text-blue-500 border-b border-dashed border-blue-500">
-                  Gold Status Tier
-                </span>
-                , which means you currently earn 3x points on dining transactions.
-                <motion.button
-                  className="absolute -bottom-2 right-0 flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              {[
+                "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200",
+                "https://images.unsplash.com/photo-1617171594279-3aa1f300a0f2?q=80&w=200",
+                "https://images.unsplash.com/photo-1659228135452-c4c7b5118047?q=80&w=200",
+              ].map((src, i) => (
+                <motion.img
+                  key={i}
+                  src={src}
+                  width={24}
+                  height={24}
+                  className="rounded-xl border-4 border-white dark:border-neutral-800 h-14 w-14 object-cover"
                   initial={{ scale: 0, rotate: 180 }}
                   animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 4.6, duration: 0.4, type: "spring" }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <PencilLine className="h-3 w-3" />
-                  Adjust tone
-                </motion.button>
-              </motion.div>
-
-              {/* Our message (user's response) */}
-              <motion.div
-                className="ml-auto relative max-w-[80%] rounded-lg bg-blue-500 p-3 text-white"
-                variants={messageVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{
-                  delay: 3.8,
-                  duration: 0.5,
-                  ease: "easeOut",
-                }}
+                  transition={{
+                    delay: 2.0 + i * 0.2,
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 200,
+                  }}
+                />
+              ))}
+            </motion.div>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 2.6, duration: 0.5 }}
+              className="relative z-10"
+            >
+              <motion.h1
+                className="text-4xl font-semibold sm:pt-0 pt-20 text-white"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 2.8, duration: 0.3, type: "spring" }}
               >
-                That&apos;s great to know! How can I upgrade to the Platinum Status Tier to get those 5x points on dining?
+                10M+
+              </motion.h1>
+              <p className="text-sm text-gray-200 dark:text-gray-300">
+                Used by millions of teams and professionals
+              </p>
+            </motion.div>
+          </TimelineContent>
+
+          {/* Memberships */}
+          <TimelineContent
+            as="div"
+            animationNum={2}
+            timelineRef={featuresRef}
+            customVariants={revealVariants}
+            className="lg:col-span-4 sm:col-span-6 col-span-12 border rounded-lg p-4 group border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+          >
+            <motion.h1
+              className="text-4xl font-semibold text-black dark:text-white"
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.6, duration: 0.5 }}
+            >
+              Memberships
+            </motion.h1>
+            <motion.p
+              className="text-sm text-gray-600 dark:text-gray-400"
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.8, duration: 0.5 }}
+            >
+              Generate revenue by creating memberships
+            </motion.p>
+            <div className="space-y-2 mt-6">
+              {[
+                {
+                  title: "Monthly",
+                  desc: "$19 per month, unlimited",
+                  color: "green",
+                  rotation: 0,
+                },
+                {
+                  title: "Trial",
+                  desc: "Free for 30 days",
+                  color: "orange",
+                  rotation: 3,
+                },
+                {
+                  title: "Yearly",
+                  desc: "$100 per year, unlimited",
+                  color: "blue",
+                  rotation: -1,
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className={`flex gap-2 justify-between items-center bg-neutral-50 dark:bg-neutral-800 p-2 rounded-xl border border-neutral-200 dark:border-neutral-600 shadow-lg pl-7 relative before:content-[''] before:absolute before:left-2.5 before:rounded-md before:top-1.5 before:w-1.5 before:h-[80%] ${
+                    colorClasses[item.color as keyof typeof colorClasses]
+                  } group-hover:rotate-0 transition-all`}
+                  style={{
+                    rotate: `${item.rotation}deg`,
+                    boxShadow: `0 10px 15px -3px rgb(${
+                      item.color === "green"
+                        ? "34 197 94"
+                        : item.color === "orange"
+                        ? "249 115 22"
+                        : "59 130 246"
+                    } / 0.1)`,
+                  }}
+                  initial={{ x: -30, opacity: 0, rotate: item.rotation + 10 }}
+                  animate={{ x: 0, opacity: 1, rotate: item.rotation }}
+                  transition={{
+                    delay: i * 0.2,
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{ rotate: 0 }}
+                >
+                  <div>
+                    <h3 className="font-semibold text-black dark:text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <ArrowRight className="text-black dark:text-white" />
+                </motion.div>
+              ))}
+            </div>
+          </TimelineContent>
+
+          {/* Remote Connectivity (icon version, responsive + bottom logo) */}
+     <TimelineContent
+  as="div"
+  animationNum={3}
+  timelineRef={featuresRef}
+  customVariants={revealVariants}
+  className="lg:col-span-7 sm:col-span-6 col-span-12 relative border p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+>
+  <article className="w-full bg-gradient-to-t font-helvetica from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent">
+    <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
+      Remote Connectivity
+    </h3>
+    <p className="mt-1 px-1 pb-1 font-normal text-gray-700 dark:text-gray-400 text-sm w-full">
+      Streamlined relay between users and peers—audio, video, next,
+      and leave—shown with crisp icons.
+    </p>
+  </article>
+
+  {/* Card body with two rows: diagram (top) + logo (bottom) */}
+  <div className="relative mt-2 w-full rounded-lg  dark:bg-neutral-950 px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
+    {/* === DIAGRAM CANVAS (responsive) === */}
+    <div
+      ref={containerRef}
+      className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[320px] overflow-visible"
+    >
+      <div className="absolute inset-0 flex items-center justify-between px-3 sm:px-4 lg:px-8">
+        {/* Left: user */}
+        <div className="flex flex-col items-center justify-center">
+          <Circle
+            className="size-14 md:size-16 lg:size-20 border-blue-500 dark:border-blue-400 bg-white dark:bg-neutral-800 text-blue-600 dark:text-blue-400"
+            ref={div1Ref}
+          >
+            <User className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
+          </Circle>
+          <span className="mt-1 text-[10px] sm:text-xs text-neutral-700 dark:text-white/70">
+            user
+          </span>
+        </div>
+
+        {/* Center: device with stacked nodes */}
+        <div className="relative flex items-center justify-center h-[250px] sm:h-[210px] md:h-[250px] lg:h-[360px] w-[160px] sm:w-[180px] md:w-[200px] lg:w-[220px]">
+          {/* device frame */}
+          <div className="absolute inset-0 rounded-[1.6rem] md:rounded-[2rem] border-2 border-black/10 dark:border-white/15 bg-neutral-100 dark:bg-white/5" />
+          <div className="absolute inset-2 md:inset-3 rounded-[1.2rem] md:rounded-[1.6rem] border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/30" />
+
+          {/* nodes (icons) */}
+          <div className="relative z-10 flex w-full flex-col items-center justify-center gap-5 sm:gap-6 lg:gap-8">
+            <Circle
+              ref={div2Ref}
+              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-indigo-600 dark:text-indigo-400"
+            >
+              <Mic className="h-5 w-5 md:h-6 md:w-6" />
+            </Circle>
+            <Circle
+              ref={div3Ref}
+              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-fuchsia-600 dark:text-fuchsia-400"
+            >
+              <Video className="h-5 w-5 md:h-6 md:w-6" />
+            </Circle>
+            <Circle
+              ref={div4Ref}
+              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-amber-600 dark:text-amber-400"
+            >
+              <SkipForward className="h-5 w-5 md:h-6 md:w-6" />
+            </Circle>
+            <Circle
+              ref={div5Ref}
+              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-rose-600 dark:text-rose-400"
+            >
+              <PhoneOff className="h-5 w-5 md:h-6 md:w-6" />
+            </Circle>
+          </div>
+        </div>
+
+        {/* Right: peer */}
+        <div className="flex flex-col items-center justify-center">
+          <Circle
+            className="size-14 md:size-16 lg:size-20 border-green-500 dark:border-green-400 bg-white dark:bg-neutral-800 text-green-600 dark:text-green-400"
+            ref={div6Ref}
+          >
+            <User className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
+          </Circle>
+          <span className="mt-1 text-[10px] sm:text-xs text-neutral-700 dark:text-white/70">
+            peer
+          </span>
+        </div>
+      </div>
+
+      {/* Beams — nodes → user (left) */}
+      <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div1Ref} />
+      <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div1Ref} />
+      <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div1Ref} />
+      <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div1Ref} />
+
+      {/* Beams — nodes → peer (right) */}
+      <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div6Ref} />
+      <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div6Ref} />
+      <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div6Ref} />
+      <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div6Ref} />
+    </div>
+
+    {/* === LOGO ROW (theme-safe) === */}
+    <div className="mt-10 flex items-center justify-center">
+      <div className="flex items-center justify-center rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 px-3 py-2">
+        <Image
+          src="/logo.svg"
+          alt="HelixQue"
+          width={128}
+          height={32}
+          className="h-6 sm:h-7 md:h-8 w-auto opacity-90  transition-colors"
+          priority
+        />
+        <span className="ml-2 text-sm font-medium text-neutral-800 dark:text-neutral-200">
+          HelixQue
+        </span>
+      </div>
+    </div>
+  </div>
+</TimelineContent>
+
+
+          {/* Real Time Chat */}
+          <TimelineContent
+            as="div"
+            animationNum={4}
+            timelineRef={featuresRef}
+            customVariants={revealVariants}
+            className="lg:col-span-5 sm:col-span-6 col-span-12 relative border p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+          >
+            <div className="flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white dark:bg-neutral-800 shadow-lg">
+              {/* Messages Area */}
+              <div className="flex-1 space-y-4 p-4 overflow-hidden">
+                {/* Agent message */}
+                <motion.div
+                  className="mr-auto relative max-w-[80%] rounded-lg bg-gray-100 dark:bg-neutral-700 p-3 text-gray-800 dark:text-gray-200"
+                  variants={messageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{
+                    delay: 3.2,
+                    duration: 0.5,
+                    ease: "easeOut",
+                  }}
+                >
+                  Hey! I see that your last transaction was a dining purchase,
+                  which qualifies for 5x points, but only for Platinum Status
+                  Tier members. You are currently in the{" "}
+                  <span className="font-semibold text-blue-500 border-b border-dashed border-blue-500">
+                    Gold Status Tier
+                  </span>
+                  , which means you currently earn 3x points on dining
+                  transactions.
+                  <motion.button
+                    className="absolute -bottom-2 right-0 flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    initial={{ scale: 0, rotate: 180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ delay: 4.6, duration: 0.4, type: "spring" }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <PencilLine className="h-3 w-3" />
+                    Adjust tone
+                  </motion.button>
+                </motion.div>
+
+                {/* User message */}
+                <motion.div
+                  className="ml-auto relative max-w-[80%] rounded-lg bg-blue-500 p-3 text-white"
+                  variants={messageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{
+                    delay: 3.8,
+                    duration: 0.5,
+                    ease: "easeOut",
+                  }}
+                >
+                  That&apos;s great to know! How can I upgrade to the Platinum
+                  Status Tier to get those 5x points on dining?
+                </motion.div>
+              </div>
+
+              {/* Chat Input Area */}
+              <motion.div
+                className="flex items-center gap-2 border-t border-gray-200 dark:border-neutral-600 p-4"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 4.8, duration: 0.5 }}
+              >
+                <motion.input
+                  type="text"
+                  placeholder="Type your message..."
+                  className="flex-1 rounded-lg border border-gray-300 dark:border-neutral-600 bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  initial={{ width: "60%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 5.0, duration: 0.6 }}
+                />
+                <motion.button
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  initial={{ scale: 0, rotate: 180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 5.2, duration: 0.4, type: "spring" }}
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ArrowRight className="h-5 w-5" />
+                </motion.button>
               </motion.div>
             </div>
 
-            {/* Chat Input Area */}
-            <motion.div
-              className="flex items-center gap-2 border-t border-gray-200 dark:border-neutral-600 p-4"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 4.8, duration: 0.5 }}
-            >
-              <motion.input
-                type="text"
-                placeholder="Type your message..."
-                className="flex-1 rounded-lg border border-gray-300 dark:border-neutral-600 bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                initial={{ width: "60%" }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 5.0, duration: 0.6 }}
-              />
-              <motion.button
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                initial={{ scale: 0, rotate: 180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ delay: 5.2, duration: 0.4, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: 10 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ArrowRight className="h-5 w-5" />
-              </motion.button>
-            </motion.div>
-          </div>
-
-          <article className="absolute right-0 top-0 left-0 w-full bg-gradient-to-b from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-6 pb-[100px] z-10">
-            <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
-              Real Time Chat
-            </h3>
-            <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
-              This component displays an interactive stack of cards with smooth
-              hover animations, gradients, and blur effects.
-            </p>
-          </article>
-        </TimelineContent>
-      </div>
+            <article className="absolute right-0 top-0 left-0 w-full bg-gradient-to-b from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-6 pb-[100px] z-10">
+              <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
+                Real Time Chat
+              </h3>
+              <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
+                This component displays an interactive stack of cards with
+                smooth hover animations, gradients, and blur effects.
+              </p>
+            </article>
+          </TimelineContent>
+        </div>
       </section>
     </div>
   );
