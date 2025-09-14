@@ -7,7 +7,7 @@ import { LayoutGroup, motion } from "motion/react";
 import HomeHeader from "@/components/common/header2";
 import NewItemsLoading from "@/components/utils/new-items-loading";
 import TextRotate from "@/components/fancy/text/text-rotate";
-import Image from "next/image";
+import { Safari } from "@/components/magicui/safari";
 
 const index = () => {
   const words = ["Better", "Perfect", "Modern", "Unique"];
@@ -130,15 +130,12 @@ const index = () => {
           </div>
           
           {/* Dashboard Mockup Image */}
-          <figure className="relative max-w-6xl mx-auto p-3 sm:p-4 lg:p-6 backdrop-blur-lg dark:bg-white/5 bg-black/5 rounded-lg transition-colors duration-300">
+          <figure className="relative max-w-6xl mx-auto p-3 sm:p-4 lg:p-6 backdrop-blur-lg dark:bg-white/5 bg-black/5 rounded-lg transition-colors duration-300 before:absolute before:inset-0 before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.03)_25%,rgba(0,0,0,0.03)_50%,transparent_50%,transparent_75%,rgba(0,0,0,0.03)_75%)] dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.03)_25%,rgba(255,255,255,0.03)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.03)_75%)] before:[background-size:8px_8px] before:rounded-lg before:pointer-events-none">
             <div className="relative z-10 rounded-lg overflow-hidden border dark:border-neutral-800 border-neutral-200 shadow-2xl dark:shadow-neutral-900/50 shadow-gray-500/20">
-              <Image
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                alt="Dashboard Preview"
-                className="w-full h-auto rounded-lg"
-                width={2340}
-                height={1560}
-                priority
+              <Safari 
+                url="helixque.vercel.app" 
+                imageSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                className="w-full h-auto"
               />
               {/* Overlay for better integration */}
               <div className="absolute inset-0 bg-gradient-to-t dark:from-black/20 from-white/20 to-transparent rounded-lg"></div>

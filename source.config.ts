@@ -22,3 +22,14 @@ export const { docs, meta } = defineDocs({
     }),
   },
 })
+
+export const { docs: announcementDocs, meta: announcementMeta } = defineDocs({
+  dir: "content/announcements",
+  docs: {
+    schema: frontmatterSchema.extend({
+      date: z.string(),
+      tags: z.array(z.string()).optional(),
+      priority: z.enum(["high", "medium", "low"]).optional(),
+    }),
+  },
+})

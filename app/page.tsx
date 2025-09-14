@@ -6,6 +6,7 @@ import HeroSection from "@/components/sections/hero";
 import PricingSection6 from "@/components/sections/pricing";
 import Feature1 from "@/components/sections/features";
 import BenefitsSection from "@/components/sections/benefits";
+import { CTANew } from "@/components/sections/cta";
 // import { AnimatedBeamMultipleOutputDemo } from "@/components/common/animated-beam";
 
 export default function Home() {
@@ -47,6 +48,7 @@ export default function Home() {
           <Feature1/>
           <BenefitsSection/>
           <PricingSection6/>
+          <CTANew/>
           {/* <AnimatedBeamMultipleOutputDemo/> */}
 
       </main>

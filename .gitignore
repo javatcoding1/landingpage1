@@ -43,3 +43,5 @@ next-env.d.ts
 
 # statically generated during postinstall
 .source/
+
+package-lock.json
