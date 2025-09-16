@@ -15,49 +15,50 @@ import { useRef, forwardRef } from "react";
 import Pill from "@/components/ui/pill";
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
+import { Globe as GlobeComponent } from "@/components/ui/globe";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 // User components representing different nations
 const UserIcons = {
   usa: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-blue-500 rounded-full">
-      <span className="text-white text-sm font-semibold">🇺🇸</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-blue-500 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇺🇸</span>
     </div>
   ),
   uk: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-red-500 rounded-full">
-      <span className="text-white text-sm font-semibold">🇬🇧</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-red-500 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇬🇧</span>
     </div>
   ),
   japan: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-red-600 rounded-full">
-      <span className="text-white text-sm font-semibold">🇯🇵</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-red-600 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇯🇵</span>
     </div>
   ),
   germany: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-yellow-500 rounded-full">
-      <span className="text-white text-sm font-semibold">🇩🇪</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-yellow-500 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇩🇪</span>
     </div>
   ),
   india: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-full">
-      <span className="text-white text-sm font-semibold">🇮🇳</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-orange-500 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇮🇳</span>
     </div>
   ),
   brazil: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-green-500 rounded-full">
-      <span className="text-white text-sm font-semibold">🇧🇷</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-green-500 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇧🇷</span>
     </div>
   ),
   canada: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-red-400 rounded-full">
-      <span className="text-white text-sm font-semibold">🇨🇦</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-red-400 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇨🇦</span>
     </div>
   ),
   australia: () => (
-    <div className="flex items-center justify-center w-10 h-10 bg-blue-400 rounded-full">
-      <span className="text-white text-sm font-semibold">🇦🇺</span>
+    <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-blue-400 rounded-full">
+      <span className="text-white text-[10px] sm:text-xs md:text-sm font-semibold">🇦🇺</span>
     </div>
   ),
 };
@@ -70,7 +71,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white dark:bg-neutral-800 p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex items-center justify-center rounded-full border-2 border-border bg-white dark:bg-neutral-800 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className
       )}
     >
@@ -301,8 +302,8 @@ const Feature1 = () => {
         className="max-w-7xl mx-auto p-4 relative z-10"
         ref={featuresRef}
       >
-        <article className="max-w-5xl mx-auto py-10 text-center space-y-2 px-8">
-          <div className="flex justify-center mb-6">
+        <article className="max-w-5xl mx-auto py-6 sm:py-8 md:py-10 text-center space-y-2 px-4 sm:px-6 md:px-8">
+          <div className="flex justify-center mb-4 sm:mb-6">
             <Pill variant="primary">Features</Pill>
           </div>
 
@@ -311,7 +312,7 @@ const Feature1 = () => {
             animationNum={0}
             timelineRef={featuresRef}
             customVariants={revealVariants}
-            className="md:text-5xl sm:text-4xl text-3xl font-medium text-black dark:text-white"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-black dark:text-white leading-tight"
           >
             Seamlessly Integrated, <br />
             Powerful Features
@@ -321,7 +322,7 @@ const Feature1 = () => {
             animationNum={1}
             timelineRef={featuresRef}
             customVariants={revealVariants}
-            className="text-gray-600 dark:text-gray-400 sm:text-base text-sm sm:w-[70%] w-full mx-auto"
+            className="text-gray-600 dark:text-gray-400 text-sm sm:text-base max-w-2xl mx-auto"
           >
             Discover the tools that elevate your experience—AI-powered insights,
             real-time user states, flexible memberships, instant chat, and
@@ -329,34 +330,78 @@ const Feature1 = () => {
           </TimelineContent>
         </article>
 
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 px-2 sm:px-0">
           {/* Global User Network */}
           <TimelineContent
             as="div"
             animationNum={0}
             timelineRef={featuresRef}
             customVariants={revealVariants}
-            className="lg:col-span-5 sm:col-span-6 col-span-12 relative w-full h-[350px] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+            className="col-span-1 md:col-span-1 lg:col-span-5 relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[380px] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
           >
             <div className="relative flex h-full w-full items-center justify-center">
-              <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full z-10">
-                <Globe className="w-10 h-10 text-white" />
+              {/* Center Logo */}
+              <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-white dark:bg-neutral-800 rounded-full border-2 border-gray-500 dark:border-gray-400 z-10 shadow-lg">
+                <Image
+                  src="/logo.svg"
+                  alt="HelixQue"
+                  width={32}
+                  height={32}
+                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                  priority
+                />
               </div>
-
-              <OrbitingCircles iconSize={50} radius={140} duration={20}>
+              
+              {/* Outer orbit */}
+              <OrbitingCircles 
+                iconSize={50} 
+                radius={140} 
+                duration={20}
+                className="hidden sm:block"
+              >
                 <UserIcons.usa />
                 <UserIcons.uk />
                 <UserIcons.japan />
                 <UserIcons.germany />
                 <UserIcons.india />
               </OrbitingCircles>
-
-              <OrbitingCircles
-                iconSize={45}
-                radius={100}
-                reverse
-                speed={1.5}
+              
+              {/* Mobile outer orbit */}
+              <OrbitingCircles 
+                iconSize={35} 
+                radius={100} 
+                duration={20}
+                className="block sm:hidden"
+              >
+                <UserIcons.usa />
+                <UserIcons.uk />
+                <UserIcons.japan />
+                <UserIcons.germany />
+                <UserIcons.india />
+              </OrbitingCircles>
+              
+              {/* Inner orbit */}
+              <OrbitingCircles 
+                iconSize={45} 
+                radius={100} 
+                reverse 
+                speed={1.5} 
                 duration={15}
+                className="hidden sm:block"
+              >
+                <UserIcons.brazil />
+                <UserIcons.canada />
+                <UserIcons.australia />
+              </OrbitingCircles>
+              
+              {/* Mobile inner orbit */}
+              <OrbitingCircles 
+                iconSize={32} 
+                radius={70} 
+                reverse 
+                speed={1.5} 
+                duration={15}
+                className="block sm:hidden"
               >
                 <UserIcons.brazil />
                 <UserIcons.canada />
@@ -364,79 +409,85 @@ const Feature1 = () => {
               </OrbitingCircles>
             </div>
 
-            <article className="absolute right-0 bottom-0 left-0 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-6 pt-[100px] z-10">
-              <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
+            <article className="absolute right-0 bottom-0 left-0 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-2 sm:p-3 md:p-4 lg:p-6 pt-[60px] sm:pt-[80px] md:pt-[90px] lg:pt-[100px] z-10">
+              <h3 className="px-1 pt-1 text-black dark:text-white text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-tight">
                 Global User Network
               </h3>
-              <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
-                Connect with users from around the world. Our platform brings
-                together diverse communities in a seamless experience.
+              <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-xs sm:text-sm w-full">
+                Connect with users from around the world. Our platform brings together diverse communities in a seamless experience.
               </p>
             </article>
           </TimelineContent>
+       
 
           {/* Usage Stats */}
-          <TimelineContent
-            as="div"
-            animationNum={1}
-            timelineRef={featuresRef}
-            customVariants={revealVariants}
-            className="lg:col-span-3 sm:col-span-6 col-span-12 border flex flex-col justify-between rounded-lg p-4 relative border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
-          >
-            <div
-              className="absolute inset-0 z-0 rounded-lg"
-              style={{
-                background:
-                  "radial-gradient(125% 125% at 50% 10%, #ffffff00 40%, #6366f1 100%)",
-              }}
-            />
-            <motion.div
-              className="flex -space-x-3 relative z-10"
-              initial={{ x: -30, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.8, duration: 0.6 }}
-            >
-              {[
-                "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200",
-                "https://images.unsplash.com/photo-1617171594279-3aa1f300a0f2?q=80&w=200",
-                "https://images.unsplash.com/photo-1659228135452-c4c7b5118047?q=80&w=200",
-              ].map((src, i) => (
-                <motion.img
-                  key={i}
-                  src={src}
-                  width={24}
-                  height={24}
-                  className="rounded-xl border-4 border-white dark:border-neutral-800 h-14 w-14 object-cover"
-                  initial={{ scale: 0, rotate: 180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{
-                    delay: 2.0 + i * 0.2,
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 200,
-                  }}
-                />
-              ))}
-            </motion.div>
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 2.6, duration: 0.5 }}
-              className="relative z-10"
-            >
-              <motion.h1
-                className="text-4xl font-semibold sm:pt-0 pt-20 text-white"
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 2.8, duration: 0.3, type: "spring" }}
-              >
-                10M+
-              </motion.h1>
-              <p className="text-sm text-gray-200 dark:text-gray-300">
-                Used by millions of teams and professionals
-              </p>
-            </motion.div>
-          </TimelineContent>
+        <TimelineContent
+  as="div"
+  animationNum={1}
+  timelineRef={featuresRef}
+  customVariants={revealVariants}
+  className="col-span-1 md:col-span-1 lg:col-span-3 relative flex flex-col justify-between overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-3 sm:p-4 min-h-[250px] sm:min-h-[280px] lg:min-h-[380px]"
+>
+  {/* background gradient */}
+  <div className="absolute inset-0 z-0 rounded-lg bg-[radial-gradient(125%_125%_at_50%_10%,rgba(255,255,255,0)_40%,#6366f1_100%)] dark:bg-[radial-gradient(125%_125%_at_50%_10%,rgba(0,0,0,0)_40%,#6366f1_100%)]" />
+
+  {/* Globe */}
+  <div className="absolute inset-0 z-[1] opacity-30 flex items-center justify-center">
+    <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 max-w-[90%] aspect-square">
+      <GlobeComponent className="w-full h-full" />
+    </div>
+  </div>
+
+  {/* soft radial overlay */}
+  <div className="pointer-events-none absolute inset-0 z-[2] h-full bg-[radial-gradient(circle_at_50%_200%,rgba(99,102,241,0.10),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_at_50%_200%,rgba(99,102,241,0.20),rgba(0,0,0,0))]" />
+
+  {/* avatars */}
+  <motion.div
+    className="relative z-10 -space-x-2 sm:-space-x-3 flex"
+    initial={{ x: -30, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ delay: 1.8, duration: 0.6 }}
+  >
+    {[
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200',
+      'https://images.unsplash.com/photo-1617171594279-3aa1f300a0f2?q=80&w=200',
+      'https://images.unsplash.com/photo-1659228135452-c4c7b5118047?q=80&w=200',
+    ].map((src, i) => (
+      <motion.img
+        key={i}
+        src={src}
+        width={96} 
+        height={96}
+        alt={`User ${i + 1}`}
+        className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-xl object-cover border-3 sm:border-4 border-white dark:border-neutral-800"
+        initial={{ scale: 0, rotate: 180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ delay: 2.0 + i * 0.2, duration: 0.5, type: 'spring', stiffness: 200 }}
+      />
+    ))}
+  </motion.div>
+
+  {/* title + caption */}
+  <motion.div
+    initial={{ y: 20, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ delay: 2.6, duration: 0.5 }}
+    className="relative z-10 mt-auto"
+  >
+    <motion.h1
+      className="font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+      initial={{ scale: 0.9 }}
+      animate={{ scale: 1 }}
+      transition={{ delay: 2.8, duration: 0.3, type: 'spring' }}
+    >
+      10M+
+    </motion.h1>
+    <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mt-1">
+      Used by millions of teams and professionals
+    </p>
+  </motion.div>
+</TimelineContent>
+
 
           {/* Memberships */}
           <TimelineContent
@@ -444,10 +495,10 @@ const Feature1 = () => {
             animationNum={2}
             timelineRef={featuresRef}
             customVariants={revealVariants}
-            className="lg:col-span-4 sm:col-span-6 col-span-12 border rounded-lg p-4 group border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+            className="col-span-1 md:col-span-2 lg:col-span-4 border rounded-lg p-3 sm:p-4 md:p-5 group border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 min-h-[250px] sm:min-h-[280px] lg:min-h-[380px]"
           >
             <motion.h1
-              className="text-4xl font-semibold text-black dark:text-white"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black dark:text-white leading-tight"
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.6, duration: 0.5 }}
@@ -455,14 +506,14 @@ const Feature1 = () => {
               Memberships
             </motion.h1>
             <motion.p
-              className="text-sm text-gray-600 dark:text-gray-400"
+              className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 mt-1 sm:mt-2"
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.8, duration: 0.5 }}
             >
               Generate revenue by creating memberships
             </motion.p>
-            <div className="space-y-2 mt-6">
+            <div className="space-y-2 sm:space-y-3 mt-4 sm:mt-6">
               {[
                 {
                   title: "Monthly",
@@ -485,7 +536,7 @@ const Feature1 = () => {
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className={`flex gap-2 justify-between items-center bg-neutral-50 dark:bg-neutral-800 p-2 rounded-xl border border-neutral-200 dark:border-neutral-600 shadow-lg pl-7 relative before:content-[''] before:absolute before:left-2.5 before:rounded-md before:top-1.5 before:w-1.5 before:h-[80%] ${
+                  className={`flex gap-1 sm:gap-2 md:gap-3 justify-between items-center bg-neutral-50 dark:bg-neutral-800 p-2 sm:p-3 md:p-4 rounded-xl border border-neutral-200 dark:border-neutral-600 shadow-lg pl-4 sm:pl-5 md:pl-7 relative before:content-[''] before:absolute before:left-2 sm:before:left-2.5 before:rounded-md before:top-1.5 before:w-1.5 before:h-[80%] ${
                     colorClasses[item.color as keyof typeof colorClasses]
                   } group-hover:rotate-0 transition-all`}
                   style={{
@@ -508,135 +559,157 @@ const Feature1 = () => {
                   }}
                   whileHover={{ rotate: 0 }}
                 >
-                  <div>
-                    <h3 className="font-semibold text-black dark:text-white">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-black dark:text-white text-sm sm:text-base md:text-lg truncate">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate">
                       {item.desc}
                     </p>
                   </div>
-                  <ArrowRight className="text-black dark:text-white" />
+                  <ArrowRight className="text-black dark:text-white w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 </motion.div>
               ))}
             </div>
           </TimelineContent>
 
           {/* Remote Connectivity (icon version, responsive + bottom logo) */}
-     <TimelineContent
+         <TimelineContent
   as="div"
   animationNum={3}
   timelineRef={featuresRef}
   customVariants={revealVariants}
-  className="lg:col-span-7 sm:col-span-6 col-span-12 relative border p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+  className="col-span-1 sm:col-span-2 lg:col-span-7 relative border p-2 sm:p-3 md:p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
 >
-  <article className="w-full bg-gradient-to-t font-helvetica from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent">
-    <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
-      Remote Connectivity
-    </h3>
-    <p className="mt-1 px-1 pb-1 font-normal text-gray-700 dark:text-gray-400 text-sm w-full">
-      Streamlined relay between users and peers—audio, video, next,
-      and leave—shown with crisp icons.
-    </p>
-  </article>
+  {/* constrain overall width so it isn't huge on desktop */}
+  <div className="mx-auto w-full max-w-[720px] lg:max-w-[680px] xl:max-w-[640px]">
+    <article className="w-full bg-gradient-to-t font-helvetica from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent">
+      <h3 className="px-1 pt-1 text-black dark:text-white text-base sm:text-lg md:text-xl lg:text-[1.25rem] font-medium">
+        Remote Connectivity
+      </h3>
+      <p className="mt-1 px-1 pb-1 font-normal text-gray-700 dark:text-gray-400 text-[11px] sm:text-xs md:text-sm w-full">
+        Streamlined relay between users and peers—audio, video, next,
+        and leave—shown with crisp icons.
+      </p>
+    </article>
 
-  {/* Card body with two rows: diagram (top) + logo (bottom) */}
-  <div className="relative mt-2 w-full rounded-lg  dark:bg-neutral-950 px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
-    {/* === DIAGRAM CANVAS (responsive) === */}
-    <div
-      ref={containerRef}
-      className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[320px] overflow-visible"
-    >
-      <div className="absolute inset-0 flex items-center justify-between px-3 sm:px-4 lg:px-8">
-        {/* Left: user */}
-        <div className="flex flex-col items-center justify-center">
-          <Circle
-            className="size-14 md:size-16 lg:size-20 border-blue-500 dark:border-blue-400 bg-white dark:bg-neutral-800 text-blue-600 dark:text-blue-400"
-            ref={div1Ref}
-          >
-            <User className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
-          </Circle>
-          <span className="mt-1 text-[10px] sm:text-xs text-neutral-700 dark:text-white/70">
-            user
-          </span>
-        </div>
+    {/* Card body */}
+    <div className="relative mt-1 sm:mt-2 w-full rounded-lg dark:bg-neutral-950 px-2 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-3 md:py-4">
+      {/* === DIAGRAM CANVAS (responsive) === */}
+      <div
+        ref={containerRef}
+        className="
+          relative z-0
+          w-full
+          h-[clamp(160px,28vw,260px)]
+          md:h-[clamp(200px,24vw,280px)]
+          overflow-visible
+          isolate
+        "
+      >
+        <div className="absolute inset-0 flex items-center justify-between px-1 xs:px-2 sm:px-3 md:px-4">
+          {/* Left: user */}
+          <div className="flex flex-col items-center justify-center">
+            <Circle
+              className="
+                w-[clamp(2.25rem,4.2vw,3.25rem)]
+                h-[clamp(2.25rem,4.2vw,3.25rem)]
+                border-blue-500 dark:border-blue-400
+                bg-white dark:bg-neutral-800
+                text-blue-600 dark:text-blue-400
+              "
+              ref={div1Ref}
+            >
+              <User className="w-[clamp(12px,1.8vw,18px)] h-[clamp(12px,1.8vw,18px)]" />
+            </Circle>
+            <span className="mt-0.5 sm:mt-1 text-[9px] sm:text-[10px] md:text-xs text-neutral-700 dark:text-white/70">
+              user
+            </span>
+          </div>
 
-        {/* Center: device with stacked nodes */}
-        <div className="relative flex items-center justify-center h-[250px] sm:h-[210px] md:h-[250px] lg:h-[360px] w-[160px] sm:w-[180px] md:w-[200px] lg:w-[220px]">
-          {/* device frame */}
-          <div className="absolute inset-0 rounded-[1.6rem] md:rounded-[2rem] border-2 border-black/10 dark:border-white/15 bg-neutral-100 dark:bg-white/5" />
-          <div className="absolute inset-2 md:inset-3 rounded-[1.2rem] md:rounded-[1.6rem] border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/30" />
+          {/* Center: device with stacked nodes */}
+          <div className="relative flex items-center justify-center w-[clamp(6rem,20vw,11rem)] aspect-[9/16] min-w-0">
+            {/* device frame */}
+            <div className="absolute inset-0 rounded-[0.9rem] md:rounded-[1.1rem] border border-black/10 dark:border-white/15 bg-neutral-100 dark:bg-white/5" />
+            <div className="absolute inset-1 sm:inset-1.5 md:inset-2 rounded-[0.6rem] md:rounded-[0.8rem] border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/30" />
 
-          {/* nodes (icons) */}
-          <div className="relative z-10 flex w-full flex-col items-center justify-center gap-5 sm:gap-6 lg:gap-8">
+            {/* nodes (icons) */}
+            <div className="relative z-10 flex w-full flex-col items-center justify-center gap-[clamp(6px,1vw,12px)]">
+              <Circle
+                ref={div2Ref}
+                className="w-[clamp(1.75rem,3.2vw,2.5rem)] h-[clamp(1.75rem,3.2vw,2.5rem)] bg-white dark:bg-neutral-800 text-indigo-600 dark:text-indigo-400"
+              >
+                <Mic className="w-[clamp(10px,1.4vw,16px)] h-[clamp(10px,1.4vw,16px)]" />
+              </Circle>
+              <Circle
+                ref={div3Ref}
+                className="w-[clamp(1.75rem,3.2vw,2.5rem)] h-[clamp(1.75rem,3.2vw,2.5rem)] bg-white dark:bg-neutral-800 text-fuchsia-600 dark:text-fuchsia-400"
+              >
+                <Video className="w-[clamp(10px,1.4vw,16px)] h-[clamp(10px,1.4vw,16px)]" />
+              </Circle>
+              <Circle
+                ref={div4Ref}
+                className="w-[clamp(1.75rem,3.2vw,2.5rem)] h-[clamp(1.75rem,3.2vw,2.5rem)] bg-white dark:bg-neutral-800 text-amber-600 dark:text-amber-400"
+              >
+                <SkipForward className="w-[clamp(10px,1.4vw,16px)] h-[clamp(10px,1.4vw,16px)]" />
+              </Circle>
+              <Circle
+                ref={div5Ref}
+                className="w-[clamp(1.75rem,3.2vw,2.5rem)] h-[clamp(1.75rem,3.2vw,2.5rem)] bg-white dark:bg-neutral-800 text-rose-600 dark:text-rose-400"
+              >
+                <PhoneOff className="w-[clamp(10px,1.4vw,16px)] h-[clamp(10px,1.4vw,16px)]" />
+              </Circle>
+            </div>
+          </div>
+
+          {/* Right: peer */}
+          <div className="flex flex-col items-center justify-center">
             <Circle
-              ref={div2Ref}
-              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-indigo-600 dark:text-indigo-400"
+              className="
+                w-[clamp(2.25rem,4.2vw,3.25rem)]
+                h-[clamp(2.25rem,4.2vw,3.25rem)]
+                border-green-500 dark:border-green-400
+                bg-white dark:bg-neutral-800
+                text-green-600 dark:text-green-400
+              "
+              ref={div6Ref}
             >
-              <Mic className="h-5 w-5 md:h-6 md:w-6" />
+              <User className="w-[clamp(12px,1.8vw,18px)] h-[clamp(12px,1.8vw,18px)]" />
             </Circle>
-            <Circle
-              ref={div3Ref}
-              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-fuchsia-600 dark:text-fuchsia-400"
-            >
-              <Video className="h-5 w-5 md:h-6 md:w-6" />
-            </Circle>
-            <Circle
-              ref={div4Ref}
-              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-amber-600 dark:text-amber-400"
-            >
-              <SkipForward className="h-5 w-5 md:h-6 md:w-6" />
-            </Circle>
-            <Circle
-              ref={div5Ref}
-              className="size-12 sm:size-13 md:size-14 bg-white dark:bg-neutral-800 text-rose-600 dark:text-rose-400"
-            >
-              <PhoneOff className="h-5 w-5 md:h-6 md:w-6" />
-            </Circle>
+            <span className="mt-0.5 sm:mt-1 text-[9px] sm:text-[10px] md:text-xs text-neutral-700 dark:text-white/70">
+              peer
+            </span>
           </div>
         </div>
 
-        {/* Right: peer */}
-        <div className="flex flex-col items-center justify-center">
-          <Circle
-            className="size-14 md:size-16 lg:size-20 border-green-500 dark:border-green-400 bg-white dark:bg-neutral-800 text-green-600 dark:text-green-400"
-            ref={div6Ref}
-          >
-            <User className="h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
-          </Circle>
-          <span className="mt-1 text-[10px] sm:text-xs text-neutral-700 dark:text-white/70">
-            peer
-          </span>
-        </div>
+        {/* Beams — nodes → user (left) */}
+        <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div1Ref} />
+        <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div1Ref} />
+        <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div1Ref} />
+        <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div1Ref} />
+
+        {/* Beams — nodes → peer (right) */}
+        <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div6Ref} />
+        <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div6Ref} />
+        <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div6Ref} />
+        <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div6Ref} />
       </div>
 
-      {/* Beams — nodes → user (left) */}
-      <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div1Ref} />
-      <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div1Ref} />
-      <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div1Ref} />
-      <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div1Ref} />
-
-      {/* Beams — nodes → peer (right) */}
-      <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div6Ref} />
-      <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div6Ref} />
-      <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div6Ref} />
-      <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div6Ref} />
-    </div>
-
-    {/* === LOGO ROW (theme-safe) === */}
-    <div className="mt-10 flex items-center justify-center">
-      <div className="flex items-center justify-center rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 px-3 py-2">
-        <Image
-          src="/logo.svg"
-          alt="HelixQue"
-          width={128}
-          height={32}
-          className="h-6 sm:h-7 md:h-8 w-auto opacity-90  transition-colors"
-          priority
-        />
-        <span className="ml-2 text-sm font-medium text-neutral-800 dark:text-neutral-200">
-          HelixQue
-        </span>
+      {/* === LOGO ROW (never overlaps) === */}
+      <div className="relative z-10 mt-4 sm:mt-6 md:mt-7 lg:mt-8 flex items-center justify-center">
+        <div className="flex items-center justify-center rounded-lg sm:rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 px-2 sm:px-2.5 md:px-3 py-1.5 sm:py-2">
+          <Image
+            src="/logo.svg"
+            alt="HelixQue"
+            width={112}
+            height={28}
+            className="h-[14px] sm:h-[16px] md:h-[18px] lg:h-[20px] w-auto opacity-90"
+            priority
+          />
+          <span className="ml-1 sm:ml-1.5 md:ml-2 text-[11px] sm:text-xs md:text-sm font-medium text-neutral-800 dark:text-neutral-200">
+            HelixQue
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -649,14 +722,26 @@ const Feature1 = () => {
             animationNum={4}
             timelineRef={featuresRef}
             customVariants={revealVariants}
-            className="lg:col-span-5 sm:col-span-6 col-span-12 relative border p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"
+            className="col-span-1 md:col-span-2 lg:col-span-5 relative border p-2 sm:p-3 md:p-4 rounded-xl overflow-hidden border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 min-h-[350px] sm:min-h-[400px] lg:min-h-[450px]"
           >
-            <div className="flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white dark:bg-neutral-800 shadow-lg">
+            {/* Header */}
+            <article className="absolute right-0 top-0 left-0 w-full bg-gradient-to-b from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-2 sm:p-3 md:p-4 pb-16 sm:pb-20 md:pb-24 z-10">
+              <h3 className="px-1 pt-1 text-black dark:text-white text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-tight">
+                Real Time Chat
+              </h3>
+              <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-xs sm:text-sm w-full">
+                Interactive chat experience with smooth animations and real-time
+                messaging capabilities.
+              </p>
+            </article>
+
+            {/* Chat Interface */}
+            <div className="mt-16 sm:mt-20 md:mt-24 flex w-full max-w-full flex-col overflow-hidden rounded-xl bg-white dark:bg-neutral-800 shadow-lg mx-auto">
               {/* Messages Area */}
-              <div className="flex-1 space-y-4 p-4 overflow-hidden">
+              <div className="flex-1 space-y-2 sm:space-y-3 p-2 sm:p-3 md:p-4 overflow-hidden max-h-[200px] sm:max-h-[240px]">
                 {/* Agent message */}
                 <motion.div
-                  className="mr-auto relative max-w-[80%] rounded-lg bg-gray-100 dark:bg-neutral-700 p-3 text-gray-800 dark:text-gray-200"
+                  className="mr-auto relative max-w-[85%] sm:max-w-[80%] rounded-lg bg-gray-100 dark:bg-neutral-700 p-2 sm:p-3 text-gray-800 dark:text-gray-200 text-[10px] sm:text-xs md:text-sm"
                   variants={messageVariants}
                   initial="hidden"
                   animate="visible"
@@ -675,21 +760,22 @@ const Feature1 = () => {
                   , which means you currently earn 3x points on dining
                   transactions.
                   <motion.button
-                    className="absolute -bottom-2 right-0 flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="absolute -bottom-1.5 sm:-bottom-2 right-0 flex items-center gap-0.5 sm:gap-1 rounded-full bg-blue-500 px-1 sm:px-1.5 md:px-2 py-0.5 sm:py-1 text-[8px] sm:text-[10px] md:text-xs text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     initial={{ scale: 0, rotate: 180 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ delay: 4.6, duration: 0.4, type: "spring" }}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <PencilLine className="h-3 w-3" />
-                    Adjust tone
+                    <PencilLine className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3" />
+                    <span className="hidden sm:inline">Adjust tone</span>
+                    <span className="sm:hidden">Tone</span>
                   </motion.button>
                 </motion.div>
 
                 {/* User message */}
                 <motion.div
-                  className="ml-auto relative max-w-[80%] rounded-lg bg-blue-500 p-3 text-white"
+                  className="ml-auto relative max-w-[85%] sm:max-w-[80%] rounded-lg bg-blue-500 p-2 sm:p-3 text-white text-[10px] sm:text-xs md:text-sm"
                   variants={messageVariants}
                   initial="hidden"
                   animate="visible"
@@ -706,7 +792,7 @@ const Feature1 = () => {
 
               {/* Chat Input Area */}
               <motion.div
-                className="flex items-center gap-2 border-t border-gray-200 dark:border-neutral-600 p-4"
+                className="flex items-center gap-1 sm:gap-1.5 md:gap-2 border-t border-gray-200 dark:border-neutral-600 p-2 sm:p-3 md:p-4"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 4.8, duration: 0.5 }}
@@ -714,33 +800,23 @@ const Feature1 = () => {
                 <motion.input
                   type="text"
                   placeholder="Type your message..."
-                  className="flex-1 rounded-lg border border-gray-300 dark:border-neutral-600 bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 rounded-lg border border-gray-300 dark:border-neutral-600 bg-gray-100 dark:bg-neutral-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-[10px] sm:text-xs md:text-sm focus:outline-none focus:ring-1 sm:focus:ring-2 focus:ring-blue-500"
                   initial={{ width: "60%" }}
                   animate={{ width: "100%" }}
                   transition={{ delay: 5.0, duration: 0.6 }}
                 />
                 <motion.button
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="flex h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-1 sm:focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
                   initial={{ scale: 0, rotate: 180 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 5.2, duration: 0.4, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: 10 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
                 </motion.button>
               </motion.div>
             </div>
-
-            <article className="absolute right-0 top-0 left-0 w-full bg-gradient-to-b from-white via-white to-transparent dark:from-neutral-900 dark:via-neutral-900 dark:to-transparent p-6 pb-[100px] z-10">
-              <h3 className="px-1 pt-1 text-black dark:text-white text-2xl font-medium">
-                Real Time Chat
-              </h3>
-              <p className="mt-1 px-1 pb-1 font-normal text-gray-600 dark:text-gray-400 text-sm w-full">
-                This component displays an interactive stack of cards with
-                smooth hover animations, gradients, and blur effects.
-              </p>
-            </article>
           </TimelineContent>
         </div>
       </section>
