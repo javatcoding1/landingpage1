@@ -24,6 +24,7 @@ export default function OpenSourceSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full mb-8">
           <ColoredSpotlightItem 
             spotlightColor="rgba(59, 130, 246, 0.2)"
+            enableScrollSpotlight={true}
             className="flex flex-col items-center text-center p-6 lg:p-8 rounded-2xl bg-white/80 dark:bg-black/50 backdrop-blur-sm border border-neutral-200/50 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 h-full"
           >
             <Server className="w-12 h-12 mb-4 text-blue-600 dark:text-blue-400" />
@@ -33,6 +34,7 @@ export default function OpenSourceSection() {
           
           <ColoredSpotlightItem 
             spotlightColor="rgba(147, 51, 234, 0.2)"
+            enableScrollSpotlight={true}
             className="flex flex-col items-center text-center p-6 lg:p-8 rounded-2xl bg-white/80 dark:bg-black/50 backdrop-blur-sm border border-neutral-200/50 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 h-full"
           >
             <Puzzle className="w-12 h-12 mb-4 text-purple-600 dark:text-purple-400" />
@@ -42,6 +44,7 @@ export default function OpenSourceSection() {
           
           <ColoredSpotlightItem 
             spotlightColor="rgba(34, 197, 94, 0.2)"
+            enableScrollSpotlight={true}
             className="flex flex-col items-center text-center p-6 lg:p-8 rounded-2xl bg-white/80 dark:bg-black/50 backdrop-blur-sm border border-neutral-200/50 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 h-full"
           >
             <Users className="w-12 h-12 mb-4 text-green-600 dark:text-green-400" />

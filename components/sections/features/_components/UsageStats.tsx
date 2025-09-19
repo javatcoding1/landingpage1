@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
-import { Globe } from "@/components/ui/globe";
+import { Sparkles } from "@/components/ui/sparkles";
 
 interface UsageStatsProps {
   timelineRef: React.RefObject<HTMLDivElement | null>;
@@ -19,11 +19,24 @@ const UsageStats: React.FC<UsageStatsProps> = ({
       {/* background gradient */}
       <div className="absolute inset-0 z-0 rounded-lg bg-[radial-gradient(125%_125%_at_50%_10%,rgba(255,255,255,0)_40%,#6366f1_100%)] dark:bg-[radial-gradient(125%_125%_at_50%_10%,rgba(0,0,0,0)_40%,#6366f1_100%)]" />
 
-      {/* Globe */}
-      <div className="absolute inset-0 z-[1] opacity-30 flex items-center justify-center">
-        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 max-w-[90%] aspect-square">
-          <Globe className="w-full h-full" />
-        </div>
+      {/* Professional Network Particles */}
+      <div className="absolute inset-0 z-[1] rounded-lg overflow-hidden">
+        <Sparkles
+          className="w-full h-full"
+          density={150}
+          size={2}
+          minSize={1}
+          speed={0.5}
+          minSpeed={0.2}
+          color="#6366f1"
+          opacity={0.8}
+          minOpacity={0.3}
+          opacitySpeed={2}
+          direction="none"
+          background="transparent"
+          mousemove={true}
+          hover={false}
+        />
       </div>
 
       {/* soft radial overlay */}

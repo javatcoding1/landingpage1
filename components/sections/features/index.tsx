@@ -374,6 +374,7 @@ const Feature1 = () => {
             {/* Mock Interviews */}
             <ColoredSpotlightItem 
               spotlightColor="rgba(59, 130, 246, 0.15)"
+              enableScrollSpotlight={true}
               className="group relative p-6 sm:p-8 lg:p-6 xl:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -390,6 +391,7 @@ const Feature1 = () => {
             {/* Professional Networking */}
             <ColoredSpotlightItem 
               spotlightColor="rgba(34, 197, 94, 0.15)"
+              enableScrollSpotlight={true}
               className="group relative p-6 sm:p-8 lg:p-6 xl:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -406,6 +408,7 @@ const Feature1 = () => {
             {/* VC Pitching */}
             <ColoredSpotlightItem 
               spotlightColor="rgba(147, 51, 234, 0.15)"
+              enableScrollSpotlight={true}
               className="group relative p-6 sm:p-8 lg:p-6 xl:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -422,6 +425,7 @@ const Feature1 = () => {
             {/* AI-Powered Feedback */}
             <ColoredSpotlightItem 
               spotlightColor="rgba(251, 146, 60, 0.15)"
+              enableScrollSpotlight={true}
               className="group relative p-6 sm:p-8 lg:p-6 xl:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -438,6 +442,7 @@ const Feature1 = () => {
             {/* Scheduled Sessions */}
             <ColoredSpotlightItem 
               spotlightColor="rgba(99, 102, 241, 0.15)"
+              enableScrollSpotlight={true}
               className="group relative p-6 sm:p-8 lg:p-6 xl:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -454,6 +459,7 @@ const Feature1 = () => {
             {/* Professional Verification */}
             <ColoredSpotlightItem 
               spotlightColor="rgba(16, 185, 129, 0.15)"
+              enableScrollSpotlight={true}
               className="group relative p-6 sm:p-8 lg:p-6 xl:p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
