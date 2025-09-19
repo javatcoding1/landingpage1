@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Drawer } from "vaul";
 import { ModeToggle } from "@/components/utils/mode-toggle";
-import GitHubButton from "./github-button";
-import DiscordButton from "./discord-button";
+import GithubIconButton from "./github-icon-button";
+import DiscordIconButton from "./discord-icon-button";
 
 export function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -132,8 +132,8 @@ export default function HomeHeader({}: HomeHeaderProps) {
             <XIcon className="h-4 w-4 fill-zinc-950 dark:fill-white transition-colors duration-300" />
           </a>
           <ModeToggle />
-          <DiscordButton />
-          <GitHubButton />
+          <DiscordIconButton />
+          <GithubIconButton />
         </nav>
       </div>
     </header>
