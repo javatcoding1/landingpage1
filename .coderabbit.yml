@@ -1,0 +1,7 @@
+review:
+  branches:
+    include:
+      - "main"
+      - "develop"
+      - "release/*"
+      - "feature/*"
