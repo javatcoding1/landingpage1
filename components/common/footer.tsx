@@ -126,15 +126,15 @@ const StickyFooter = () => {
             &copy; {new Date().getFullYear()} HXQLabs. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-xs text-muted-foreground">
-            <Link href="#privacy" className="hover:text-foreground transition-colors duration-200">
+            <Link href="/legal/privacy-policy" className="hover:text-foreground transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link href="#terms" className="hover:text-foreground transition-colors duration-200">
-              Terms of Service
+            <Link href="/legal/terms-condition" className="hover:text-foreground transition-colors duration-200">
+              Terms &amp; Conditions
             </Link>
-            <Link href="#cookies" className="hover:text-foreground transition-colors duration-200">
-              Cookie Policy
-            </Link>
+            {/* <Link href="/legal/license" className="hover:text-foreground transition-colors duration-200">
+              License
+            </Link> */}
           </div>
         </div>
       </div>

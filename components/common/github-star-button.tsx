@@ -16,21 +16,21 @@ export function GithubStarButton({ className }: { className?: string }) {
   const [isStarHovered, setIsStarHovered] = useState(false)
   const canAnimate = useCanAnimate()
 
-  useEffect(() => {
-    const fetchStars = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/repos/badtzx0/badtz-ui"
-        )
-        const data = await response.json()
-        setStars(data.stargazers_count)
-      } catch (error) {
-        console.error("Error fetching GitHub stars:", error)
-      }
-    }
+  // useEffect(() => {
+  //   const fetchStars = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://api.github.com/repos/HXQLabs/helixque"
+  //       )
+  //       const data = await response.json()
+  //       setStars(data.stargazers_count)
+  //     } catch (error) {
+  //       console.error("Error fetching GitHub stars:", error)
+  //     }
+  //   }
 
-    fetchStars()
-  }, [])
+  //   fetchStars()
+  // }, [])
 
   return (
     <MotionConfig
@@ -42,7 +42,7 @@ export function GithubStarButton({ className }: { className?: string }) {
     >
       <Link
         target="_blank"
-        href="https://github.com/badtzx0/badtz-ui"
+        href="https://github.com/HXQLabs/"
         onMouseEnter={() => setIsStarHovered(true)}
         onMouseLeave={() => setIsStarHovered(false)}
         onClick={() => {
@@ -75,6 +75,7 @@ export function GithubStarButton({ className }: { className?: string }) {
               layoutRoot
             />
           )}
+         Star on GitHub
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"
